@@ -1,0 +1,16 @@
+{
+    "name": "satellite",
+    "version": "2.3.0",
+    "description": "Minteck Sattelite Server, a fork of the Minteck Projects Web Server",
+    "main": "server/core.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.24.0",
+        "ejs": "^3.1.6",
+        "node-mime": "^1.0.0"
+    }
+}

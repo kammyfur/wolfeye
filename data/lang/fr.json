@@ -1,0 +1,77 @@
+{
+    "global": {
+        "website": "WolfEye"
+    },
+    "home": {
+        "tagline": "C'est de la recherche.",
+        "bar": "Rechercher sur le Web...",
+        "submit": "Recherche WolfEye",
+        "submit2": "Rechercher",
+        "yours": "WolfEye est le moteur de recherche dont [vous] avez besoin",
+        "arguments": {
+            "bias": {
+                "title": "Non biaisé",
+                "description": "Les moteurs de recherche modernes sont biaisés par le Search Engine Optimization, WolfEye ne les écoute pas et essaye de fournir des résultats neutres."
+            },
+            "privacy": {
+                "title": "Privé",
+                "description": "Vos données sont les vôtres pour toujours. WolfEye collecte le moins de données possibles, et vous fournit tout de même des résultats de recherche précis."
+            },
+            "dependency": {
+                "title": "Indépendant",
+                "description": "WolfEye est totalement créé depuis zéro par des volontaires sur leur temps libre. Nous avons un objectif commun : un Internet libre."
+            }
+        },
+        "info": {
+            "title": "Obtenez l'info que [vous] méritez",
+            "description": "WolfEye fournit des résultats simple et pertinents en seulement quelques clics. Peu importe ce que vous voulez, il est déjà sur WolfEye."
+        },
+        "pawtips": {
+            "title": "Le Web entier au [bout des pattes]",
+            "description": "La base de données de WolfEye est une liste grandissante des sites et pages Web. De nouvelles pages sont ajoutées chaque jour."
+        },
+        "team": {
+            "title": "Ils ont créé WolfEye pour [vous] !",
+            "jobs": [
+                "Chef de projet",
+                "Développeuse client",
+                "Développeuse serveur",
+                "Graphiste logo"
+            ]
+        },
+        "legal": {
+            "title": "Et voici [vos] trucs légaux habituels",
+            "privacy": "Politique de confidentialité",
+            "tos": "Conditions d'utilisation",
+            "code": "Code source",
+            "fe": "Client WolfEye",
+            "notices": "Mentions légales",
+            "api": "Documentations de l'API"
+        }
+    },
+    "results": {
+        "didyoumean": "Affiche les résultats pour \"$1\", voulez-vous dire \"$2\" ?",
+        "debug": "Environ $1 résultats ($2 secondes)",
+        "load": "Chargement...",
+        "none": {
+            "title": "Il n'y a rien ici",
+            "description": "Nous avons essayé de trouver des résultats correspondants à \"$1\" mais ne parvenons pas à trouver quoi que ce soit de pertinent pour vous. Pour rechercher plus précisément, essayez ceci :",
+            "tips": [
+                "vérifiez l'orthographe ;",
+                "utilisez moins de mots ;",
+                "utilisez des mots moins précis ;",
+                "recherchez en Anglais"
+            ]
+        },
+        "disclaimer": {
+            "title": "Avertissement",
+            "description": "Cette information est fournie par Wolfram|Alpha. Les résultats et l'information de ce site ne sont pas une source certifiée ou définitive d'information sur laquelle il est possible de se fier à des fins légales, financières, médicales, de sécurité ou autres fins critiques./Results and information from this site are not a certified or definitive source of information that can be relied on for legal, financial, medical, life-safety or any other critical purposes."
+        },
+        "source": "depuis",
+        "verify": "Site Web vérifié",
+        "local": {
+            "title": "Accrochez-vous ! Retournons à la maison...",
+            "description": "Vous utilisez déjà WolfEye ; mais vous avez l'air perdu·e. Utilisez la barre de recherche en haut de cette page pour rechercher quelque chose sur le Web."
+        }
+    }
+}

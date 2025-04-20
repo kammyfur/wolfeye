@@ -1,0 +1,77 @@
+{
+    "global": {
+        "website": "WolfEye"
+    },
+    "home": {
+        "tagline": "It's about search.",
+        "bar": "Search the Web...",
+        "submit": "WolfEye Search",
+        "submit2": "Search",
+        "yours": "WolfEye is the search engine [you] need",
+        "arguments": {
+            "bias": {
+                "title": "Unbiased",
+                "description": "Modern search engines get biased by search engine optimization, WolfEye doesn't listen and try to provide neutral results."
+            },
+            "privacy": {
+                "title": "Private",
+                "description": "Your data is yours to keep. WolfEye collects as few data as possible, and yet provides you with accurate search results."
+            },
+            "dependency": {
+                "title": "Independent",
+                "description": "WolfEye is completely made from scratch by volunteers on their free time. We have a common goal: an open Internet."
+            }
+        },
+        "info": {
+            "title": "Get the info [you] deserve",
+            "description": "WolfEye delivers accurate and simple results in just a matter of clicks. Whatever you want is already on WolfEye."
+        },
+        "pawtips": {
+            "title": "The entire Web at [your] pawtips",
+            "description": "WolfEye's database is an ever-growing list of single websites and page networks. New pages get added to WolfEye every day."
+        },
+        "team": {
+            "title": "They make WolfEye work for [you]!",
+            "jobs": [
+                "Manager",
+                "Frontend Developer",
+                "Backend Developer",
+                "Logo Designer"
+            ]
+        },
+        "legal": {
+            "title": "And here is [your] usual legal stuff",
+            "privacy": "Privacy Policy",
+            "tos": "Terms of Use",
+            "code": "Source Code",
+            "fe": "WolfEye Frontend",
+            "notices": "Legal Notices",
+            "api": "API Documentation"
+        }
+    },
+    "results": {
+        "didyoumean": "Showing results for \"$1\", did you mean \"$2\"?",
+        "debug": "About $1 results ($2 seconds)",
+        "load": "Loading...",
+        "none": {
+            "title": "Nothing is there",
+            "description": "We tried finding results corresponding to \"$1\" but couldn't find anything relevant to you. To search more accurately, try the following:",
+            "tips": [
+                "check for spelling;",
+                "use less words;",
+                "use more generic words;",
+                "search in English"
+            ]
+        },
+        "disclaimer": {
+            "title": "Disclaimer",
+            "description": "This information is provided by Wolfram|Alpha. Results and information from this site are not a certified or definitive source of information that can be relied on for legal, financial, medical, life-safety or any other critical purposes."
+        },
+        "source": "from",
+        "verify": "Verified Website",
+        "local": {
+            "title": "Hold tight! Let's go home...",
+            "description": "You are already using WolfEye; but you seem lost. Use the search bar at the top of this page to search for something on the Web."
+        }
+    }
+}

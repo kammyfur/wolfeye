@@ -1,0 +1,193 @@
+<% delete global.title; %>
+<%- await include(`${private}/header.ejs`) %>
+
+<div id="home">
+    <div class="container" id="reveal2">
+        <h1 class="title is-1" id="home-logo">
+            <small><small>WolfEye</small></small><br>
+            <%- lang.home.tagline %><br>
+            <img src="/assets/logo.svg">
+        </h1>
+        <form action="search">
+            <input id="home-bar" class="search-input" autocomplete="off" spellcheck="false" type="text" name="q" placeholder="<%- lang.home.bar %>">
+            <br/>
+            <div class="searchbtn">
+                <input class="home-btn" id="home-submit" type="submit" value="<%- lang.home.submit %>">
+            </div>
+        </form>
+        <div id="icons">
+            <img src="/assets/home/1.svg" alt="" class="icon icon-1">
+            <img src="/assets/home/2.svg" alt="" class="icon icon-2">
+            <img src="/assets/home/3.svg" alt="" class="icon icon-3">
+            <img src="/assets/home/4.svg" alt="" class="icon icon-4">
+            <img src="/assets/home/5.svg" alt="" class="icon icon-5">
+            <img src="/assets/home/6.svg" alt="" class="icon icon-6">
+            <img src="/assets/home/7.svg" alt="" class="icon icon-7">
+            <img src="/assets/home/8.svg" alt="" class="icon icon-8">
+        </div>
+    </div>
+</div>
+<script>$("#reveal2").fadeTo(0, 0);</script>
+
+<div id="home-pages">
+    <div class="container home-page">
+        <div class="home-page-inner">
+            <div class="section-center" id="reveal">
+                <h1 id="reveal-01" class="reveal"><%- lang.home.yours.replace("[", "<u class='solid'>").replace("]", "</u>") %></h1>
+                <div class="home-grid">
+                    <div id="reveal-02" class="reveal">
+                        <img class="home-grid-icon" src="/assets/home/1-bias.svg">
+                        <h2><%- lang.home.arguments.bias.title %></h2>
+                        <p><%- lang.home.arguments.bias.description %></p>
+                    </div>
+                    <div id="reveal-03" class="reveal">
+                        <img class="home-grid-icon" src="/assets/home/2-privacy.svg">
+                        <h2><%- lang.home.arguments.privacy.title %></h2>
+                        <p><%- lang.home.arguments.privacy.description %></p>
+                    </div>
+                    <div id="reveal-04" class="reveal">
+                        <img class="home-grid-icon" src="/assets/home/3-dependency.svg">
+                        <h2><%- lang.home.arguments.dependency.title %></h2>
+                        <p><%- lang.home.arguments.dependency.description %></p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div class="container home-page">
+        <div class="home-page-inner">
+            <div id="reveal3">
+                <div class="instant-grid">
+                    <div>
+                        <div>
+                            <h2><span id="typewrite">kartik</span><span class="ibeam">|</span></h2>
+                            <div id="details-inner"><p>Kartik is an online car racing game developed by Minteck in early 2021. The game is made of its own engine based on GitHub's Electron; which use have caused major problems during the development; Minteck said on her blog that she doesn't even know how to properly use Electron. The game releases on June 12th 2021, and with bug fixing updates until October 1st 2021. Kartik was originally supposed to be released under a proprietary license, but was made open source later in the development as per the JetBrains License Agreement.</p><p><i>— <a href="search?q=minteck" id="details-data-link" target="">Minteck</a></i></p></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h1><%- lang.home.info.title.replace("[", "<u class='solid'>").replace("]", "</u>") %></h1>
+                        <p><%- lang.home.info.description %></p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div class="container home-page">
+        <div class="home-page-inner">
+            <div id="reveal4">
+                <div class="instant-grid">
+                    <div>
+                        <h1><%- lang.home.pawtips.title.replace("[", "<u class='solid'>").replace("]", "</u>") %></h1>
+                        <p><%- lang.home.pawtips.description %></p>
+                    </div>
+                    <div>
+                        <div>
+                            <h2><span id="typewrite2">gitlab minteck</span><span class="ibeam">|</span></h2>
+                            <div id="results" style="padding: 0 !important;">
+                                <div class="result">
+                                    <a href="https://gitlab.minteck.org/minteck/electrode">
+                                        <div class="result-name" style="font-size: 18px;"><img alt="" class="result-icon" src="https://external-content.duckduckgo.com/ip3/gitlab.minteck.org.ico"> <b>Minteck / Electrode · GitLab</b></div>
+                                        <div class="result-description">A lightning fast and powerful Web server for Neutron</div>
+                                        <div class="result-url"><small>https://gitlab.minteck.org/minteck/electrode</small></div>
+                                    </a>
+                                </div>
+
+                                <div class="result">
+                                    <a href="https://gitlab.minteck.org/minteck/unchainedtech">
+                                        <div class="result-name" style="font-size: 18px;"><img alt="" class="result-icon" src="https://external-content.duckduckgo.com/ip3/gitlab.minteck.org.ico"> <b>Minteck / UnchainedTech · GitLab</b></div>
+                                        <div class="result-description">The software powering the UnchainedTech blog</div>
+                                        <div class="result-url"><small>https://gitlab.minteck.org/minteck/unchainedtech</small></div>
+                                    </a>
+                                </div>
+
+                                <div class="result">
+                                    <a href="https://gitlab.minteck.org/minteck">
+                                        <div class="result-name" style="font-size: 18px;"><img alt="" class="result-icon" src="https://external-content.duckduckgo.com/ip3/gitlab.minteck.org.ico"> <b>Minteck · GitLab</b></div>
+                                        <div class="result-description"></div>
+                                        <div class="result-url"><small>https://gitlab.minteck.org/minteck</small></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div class="container home-page">
+        <div class="home-page-inner">
+            <div id="reveal5">
+                <div class="section-center">
+                    <h1><%- lang.home.team.title.replace("[", "<u class='solid'>").replace("]", "</u>") %></h1>
+                    <div class="team">
+                        <div>
+                            <img src="https://www.gravatar.com/avatar/48f67e8c212de600986cb32146f9a15b?s=128&d=identicon" class="member-icon">
+                            <span class="member-name">Minteck</span>
+                            <span class="member-description"><%- lang.home.team.jobs[0] %>, <%- lang.home.team.jobs[1] %></span>
+                        </div>
+                        <div>
+                            <img src="https://www.gravatar.com/avatar/b3accce24bb1696d300adf1c992ec41b?s=128&d=identicon" class="member-icon">
+                            <span class="member-name">Jae Lo Presti</span>
+                            <span class="member-description"><%- lang.home.team.jobs[2] %></span>
+                        </div>
+                        <div>
+                            <img src="https://www.gravatar.com/avatar/60d299b3bbcb610e4cebfdd228a87b75?s=128&d=identicon" class="member-icon">
+                            <span class="member-name">Okusin</span>
+                            <span class="member-description"><%- lang.home.team.jobs[3] %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div class="container home-page">
+        <div class="home-page-inner">
+            <div id="reveal6">
+                <div class="section-center">
+                    <h1><%- lang.home.legal.title.replace("[", "<u class='solid'>").replace("]", "</u>") %></h1>
+                    <div class="home-grid">
+                        <a href="https://noiseless.pro" id="reveal-02" class="reveal legal-btn">
+                            <img class="home-grid-icon" src="/assets/home/1-privacy.svg">
+                            <h2><%- lang.home.legal.privacy %></h2>
+                        </a>
+                        <a href="https://staging.minteck.org/legal/#/terms" id="reveal-03" class="reveal legal-btn">
+                            <img class="home-grid-icon" src="/assets/home/2-tos.svg">
+                            <h2><%- lang.home.legal.tos %></h2>
+                        </a>
+                        <a href="https://gitlab.minteck.org/explore/projects/topics/WolfEye" id="reveal-04" class="reveal legal-btn">
+                            <img class="home-grid-icon" src="/assets/home/3-source.svg">
+                            <h2><%- lang.home.legal.code %></h2>
+                        </a>
+                    </div>
+                    <small>
+                        <a class="aside-link" href="https://staging.minteck.org/legal/#/privacy"><%- lang.home.legal.privacy %> (<%- lang.home.legal.fe %>)</a> · <a class="aside-link" href="https://staging.minteck.org/legal/#/notices"><%- lang.home.legal.notices %></a> · <a class="aside-link" href="/docs"><%- lang.home.legal.api %></a>
+                    </small>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/reveal.js"></script>
+<script src="/assets/typewriter.js"></script>
+
+<%- await include(`${private}/footer.ejs`) %>

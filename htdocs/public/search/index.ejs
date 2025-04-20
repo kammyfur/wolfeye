@@ -1,0 +1,86 @@
+<%
+
+    if (typeof get["q"] !== "undefined") {
+        query = get["q"].toLowerCase().substr(0, 200).replace(/[^A-Za-z0-9 \-]/, '').replace(/[\.]/, ' ').trim();
+    } else {
+        res.writeHead(301, {"Location": "/" + slang});
+        res.end();
+    }
+
+    if (query === "") {
+        res.writeHead(301, {"Location": "/" + slang});
+        res.end();
+    }
+
+global.title = query; %>
+<%- await include(`${private}/header.ejs`) %>
+
+<div id="results-intro">
+    <a href="." id="results-intro-logo"><img id="results-intro-logo-img" src="/assets/logo.svg"></a>
+    <form id="results-intro-bar" action="./search">
+        <input id="results-intro-bar-input" autocomplete="off" spellcheck="false" type="text" name="q" value="<%= query %>" placeholder="<%- lang.home.bar %>">
+        <input type="submit" value="<%- lang.home.submit2 %>" id="results-intro-bar-submit">
+    </form>
+</div>
+
+<div id="intro-results-separator"></div>
+
+<%
+
+start = new Date();
+qres = await axios.post("https://api.wolfeye.minteck.org/api/tocorrect", { string: query });
+cdata = qres.data;
+time = new Date() - start;
+
+if (cdata.corrected) { %>
+
+<div class="dym-section">
+    <%- lang.results.didyoumean.replace("$1", query).replace("$2", '<a class="dym-link" href="./search?q=' + encodeURI(cdata.res) + '">' + cdata.res + '</a>') %>
+</div>
+
+<% }
+
+sres = await axios.post("https://api.wolfeye.minteck.org/api/search", { query, page: 0 });
+sdata = sres.data;
+
+%>
+
+<p id="results-debug"><small id="results-debug-inner"><%- lang.results.debug.replace("$1", sdata.res.length).replace("$2", (time / 1000).toFixed(2)) %></small></p>
+
+<div id="details">
+    <div id="details-inner">
+        <div id="details-loader"><img alt="<%- lang.results.load %>" src="/assets/loader.svg"></div>
+    </div>
+</div>
+<script>query = "<%- query %>";</script>
+<script src="/assets/instant.js"></script>
+
+<%
+
+if (sdata.res.length > 0) { %>
+<div id="results">
+        <% for (item of sdata.res) { %>
+    <div class="result">
+        <a href="<%- item.url.replaceAll("\"", "''") %>">
+        <div class="result-name" style="font-size: 18px;"><img alt="" class="result-icon" src="https://external-content.duckduckgo.com/ip3/<%- new URL(item.url).host %>.ico"> <b><%= item.title.replaceAll("<", "&lt;").replaceAll(">", "&gt;") %></b></div>
+        <div class="result-description"><%= item.description.replaceAll("<", "&lt;").replaceAll(">", "&gt;") %></div>
+        <div class="result-url"><small><%= item.url.replaceAll("<", "&lt;").replaceAll(">", "&gt;") %></small></div>
+        </a>
+    </div>
+<% } %>
+</div>
+<% } %>
+<% if (sdata.res.length <= 0) { %>
+    <div id="results" class="results-none">
+        <h2><%- lang.results.none.title %></h2>
+        <p><%- lang.results.none.description.replace("$1", query) %>
+        <ul>
+            <li><%- lang.results.none.tips[0] %></li>
+            <li><%- lang.results.none.tips[1] %></li>
+            <li><%- lang.results.none.tips[2] %></li>
+            <li><%- lang.results.none.tips[3] %></li>
+        </ul></p>
+    </div>
+<% } %>
+
+<%- await include(`${private}/footer.ejs`) %>

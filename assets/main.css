@@ -1,0 +1,286 @@
+body, html {
+    background: #222;
+    color: white;
+    margin: 0;
+    font-family: arial,sans-serif;
+}
+
+.result-url, .result-name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.result {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.result:hover {
+    background: #333;
+}
+
+.result:active, .result:focus {
+    background: #444;
+}
+
+.result a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.result.result-official {
+    border-color: rgba(255, 255, 0, 0.3);
+}
+
+.result.result-verified {
+    border-color: rgba(0, 255, 21, 0.3);
+}
+
+.result-relevant {
+    vertical-align: middle;
+}
+
+#results-intro-logo, #results-intro-bar {
+    display: inline-block;
+    margin: 0;
+}
+
+#results-intro {
+    background: #111;
+    padding: 0 50px;
+    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #252525;
+}
+
+#results-intro-bar-input {
+    background: #171717;
+    color: white;
+    border: 1px solid #222;
+    padding: 10px;
+    outline: none;
+    height: 8px;
+    border-radius: 5px;
+    width: calc(100vw - 230px);
+    margin: 8px 10px;
+}
+
+#results-intro-bar-input:hover {
+    border-color: #333;
+}
+
+#home-bar:hover {
+    border-color: #444;
+}
+
+#results-intro-bar-input:active, #results-intro-bar-input:focus {
+    border-color: #444;
+}
+
+#home-bar:active, #home-bar:focus {
+    border-color: #555;
+}
+
+#intro-results-separator {
+    margin-top: 43px;
+}
+
+@media (max-width: 1200px) {
+    #results, #details, #results-debug {
+        padding: 50px 200px !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    #results, #details, #results-debug {
+        padding: 50px 150px !important;
+    }
+}
+
+@media (max-width: 700px) {
+    #results, #details, #results-debug {
+        padding: 50px 100px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    #results, #details, #results-debug {
+        padding: 50px 50px !important;
+    }
+}
+
+@media (max-width: 450px) {
+    #results, #details, #results-debug {
+        padding: 50px 10px !important;
+    }
+}
+
+#results, #details, #results-debug {
+    padding: 50px 250px;
+}
+
+.dym-link {
+    color: lightgray;
+}
+
+.dym-section {
+    padding: 10px;
+    background: #333;
+    border-bottom: 1px solid #353535;
+}
+
+.result-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+#results-intro-logo-img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+#details {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    display: none;
+}
+
+#results-intro-bar-submit {
+    background-color: transparent;
+    color: transparent;
+    border: transparent;
+    cursor: pointer;
+    background-image: url("/assets/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+}
+
+@media (max-width: 50px) {
+    #results-intro {
+        padding: 0 50px;
+    }
+    #results-intro-bar-input {
+        width: calc(100vw - 152px);
+        margin: 8px 5px;
+    }
+}
+
+#results-debug {
+    margin: 0;
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+}
+
+#results.with-details {
+    padding-top: 10px !important;
+}
+
+#results-debug-inner-details {
+    opacity: 0;
+    font-family: monospace;
+}
+
+#results-debug-inner-details:hover {
+    opacity: 1;
+}
+
+#details-source {
+    display: inline-block;
+    opacity: .5;
+}
+
+#details-source-link, #details-data-link {
+    color: white;
+}
+
+.container-fluid { /* Ah yes, here is the container for the gender fluid */
+    width: 100%;
+}
+
+.container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title.is-1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.search-input {
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+}
+
+.search-input {
+    outline: none;
+    max-width: 100%;
+    width: 88%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    border-radius: 5px;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    background-size: 8%;
+}
+
+div.searchbtn {
+    text-align: center;
+}
+
+div.searchbtn input {
+    cursor: pointer;
+    padding: 8px 15px;
+    margin: 4px 2px;
+    font-size: 14px;
+}
+
+#home-logo {
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+#home-logo img {
+    width: 128px;
+}
+
+.home-btn {
+    border: 1px solid #666;
+    border-radius: 5px;
+    background: linear-gradient(
+            180deg, rgba(53,53,53,1) 0%, rgba(37,37,37,1) 100%);
+    color: white;
+    margin-right: 10px !important;
+}
+
+.home-btn-last {
+    margin-left: 10px !important;
+    margin-right: 0 !important;
+}
+
+.home-btn:hover {
+    border-color: #656565;
+    background: #333333;
+}
+
+.home-btn:active {
+    border-color: #777;
+    background: #353535;
+}

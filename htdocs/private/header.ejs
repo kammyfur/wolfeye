@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="search" type="application/opensearchdescription+xml" title="WolfEye" href="/assets/opensearch.xml">
+    <script>
+        lang = JSON.parse(atob("<%- Buffer.from(JSON.stringify(lang)).toString("base64"); %>"));
+    </script>
+    <title><%
+
+ if (typeof title !== 'undefined') {
+     pgname = title + " - " + lang.global.website;
+ } else {
+     pgname = lang.global.website;
+ }
+
+ %><%= pgname %></title>
+    <link rel="shortcut icon" href="/assets/logo-small.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/jquery.js"></script>
+</head>
+<body>
+<main style="overflow-x: hidden;">

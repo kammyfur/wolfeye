@@ -1,0 +1,119 @@
+<%
+
+    function date() {
+        return "" + new Date().getFullYear() + (new Date().getMonth() + 1) + new Date().getDate() + new Date().getHours() + new Date().getMinutes();
+    }
+
+    function date2() {
+        return "" + new Date().getFullYear() + (new Date().getMonth() + 1);
+    }
+
+    if (typeof get["q"] !== "undefined") {
+        query = get["q"].toLowerCase().substr(0, 200).replace(/[^A-Za-z0-9 +\-_/*]/, '').replace(/[\.]/, ' ').trim();
+    } else {
+        res.writeHead(301, {"Location": "/" + slang});
+        res.end();
+    }
+
+    if (query === "") {
+        res.writeHead(301, {"Location": "/" + slang});
+        res.end();
+    }
+
+    cacheOnly = false;
+    rl = {
+        local: -1,
+        global: -1,
+        blocked: false
+    }
+
+    rlroot = wwwdata + "/../../data/ratelimiting";
+    cache = wwwdata + "/../../data/cache";
+    afile = rlroot + "/" + address;
+    gfile = rlroot + "/_global";
+    mfile = rlroot + "_month";
+
+    if (!fs.existsSync(rlroot)) fs.mkdirSync(rlroot);
+
+    if (!fs.existsSync(afile)) {
+        fs.writeFileSync(afile, "1|" + date());
+    } else {
+        requests = fs.readFileSync(afile).toString().split("|")[0] - 1 + 1;
+        vdate = fs.readFileSync(afile).toString().split("|")[1];
+        if (vdate === date()) {
+            requests++;
+            if (requests > 3) {
+                cacheOnly = true;
+                rl.blocked = true;
+            }
+            fs.writeFileSync(afile, requests + "|" + date());
+        } else {
+            fs.writeFileSync(afile, "1|" + date());
+        }
+
+        rl.local = requests;
+    }
+
+    if (!fs.existsSync(gfile)) {
+        fs.writeFileSync(gfile, "1|" + date());
+    } else {
+        requests = fs.readFileSync(gfile).toString().split("|")[0] - 1 + 1;
+        vdate = fs.readFileSync(gfile).toString().split("|")[1];
+        if (vdate === date()) {
+            requests++;
+            if (requests >= 20) {
+                cacheOnly = true;
+                rl.blocked = true;
+            }
+            fs.writeFileSync(gfile, requests + "|" + date());
+        } else {
+            fs.writeFileSync(gfile, "1|" + date());
+        }
+
+        rl.global = requests;
+    }
+
+    if (!fs.existsSync(mfile)) {
+        fs.writeFileSync(mfile, "1|" + date2());
+    } else {
+        requests = fs.readFileSync(mfile).toString().split("|")[0] - 1 + 1;
+        vdate = fs.readFileSync(mfile).toString().split("|")[1];
+        if (vdate === date2()) {
+            requests++;
+            if (requests >= 1990) {
+                cacheOnly = true;
+                rl.blocked = true;
+            }
+            fs.writeFileSync(mfile, requests + "|" + date2());
+        } else {
+            fs.writeFileSync(mfile, "1|" + date2());
+        }
+
+        rl.global = requests;
+    }
+
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    text = encodeURI(query);
+
+    if (!fs.existsSync(cache)) fs.mkdirSync(cache);
+
+    ansfile = cache + "/answer_" + query.replaceAll(" ", "_").replaceAll("/", "_");
+
+    if (fs.existsSync(ansfile)) {
+        ds = "local";
+        data = fs.readFileSync(ansfile);
+    } else {
+        if (cacheOnly) {
+            res.end();
+        } else {
+            ds = "online";
+            try {
+                data = (await axios.get("https://api.wolframalpha.com/v1/result?appid=" + fs.readFileSync(wwwdata + "/../../data/wolfram.txt").toString() + "&i=" + text + "&units=metric&timeout=10")).data;
+                fs.writeFileSync(ansfile, data);
+            } catch (e) {
+                data = "";
+            }
+        }
+    }
+
+%><%= data %>

@@ -1,0 +1,7 @@
+{
+  "port": 8082,
+  "document_root": "./htdocs/public",
+  "access": "$dir.json",
+  "verbose": true,
+  "errors_show_trace": false
+}

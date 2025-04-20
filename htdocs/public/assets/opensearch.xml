@@ -1,0 +1,11 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>WolfEye</ShortName>
+    <Description>WolfEye, it's about search.</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <Image width="16" height="16" type="image/svg">https://wolfeye.minteck.org/assets/logo.svg</Image>
+    <Url type="text/html" template="https://wolfeye.minteck.org/search">
+        <Param name="q" value="{searchTerms}"/>
+    </Url>
+    <moz:SearchForm>https://wolfeye.minteck.org/search</moz:SearchForm>
+</OpenSearchDescription>

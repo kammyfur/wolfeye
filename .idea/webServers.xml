@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2aa4b6de-d4f8-4658-9bf1-3f50778b51aa" name="WolfEye.js">
+        <fileTransfer accessType="SFTP" host="ssh.minteck.org" port="22465" sshConfigId="9a5e9591-1c26-456f-a40c-300102309bfc" sshConfig="root@ssh.minteck.org:22465 agent" authAgent="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
